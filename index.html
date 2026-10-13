@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de Turismo de Tangará – SC | Morro Agudo, Vinhos e Circuito de Caravaggio</title>
+  <meta name="description" content="Portal oficial de turismo de Tangará – SC: Morro Agudo (1.075 m), voo livre, Circuito de Caravaggio, enoturismo, gastronomia, hospedagem, eventos e mapa interativo.">
+  <meta name="theme-color" content="#0F4C81">
+  <meta property="og:title" content="Portal de Turismo de Tangará – SC">
+  <meta property="og:description" content="Natureza, altitude e enoturismo no coração de Santa Catarina.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/hero-morro-agudo.jpg">
+  <link rel="icon" href="img/logo-tangara.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TouristInformationCenter","name":"Secretaria Municipal de Turismo de Tangará – SC","telephone":"+55-49-3532-7468","email":"turismo@tangara.sc.gov.br","address":{"@type":"PostalAddress","addressLocality":"Tangará","addressRegion":"SC","addressCountry":"BR"},"openingHours":"Mo-Fr 08:00-12:00,13:00-17:00","url":"https://www.tangara.sc.gov.br"}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="wrap topbar__in">
+      <span id="today" aria-live="off"></span>
+      <nav aria-label="Links oficiais" class="topbar__links">
+        <a href="https://www.tangara.sc.gov.br" target="_blank" rel="noopener">Prefeitura de Tangará</a>
+        <a href="https://www.amarp.org.br" target="_blank" rel="noopener">AMARP</a>
+        <a href="https://www.fecam.org.br" target="_blank" rel="noopener">FECAM</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="wrap header__in">
+      <a href="#inicio" class="brand" aria-label="Portal de Turismo de Tangará – início">
+        <img src="img/logo-tangara.png" alt="Portal de Turismo de Tangará" onerror="this.replaceWith(Object.assign(document.createElement('strong'),{textContent:'Turismo Tangará',className:'brand-txt'}))" width="190" height="56">
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#descubra">Descubra Tangará</a>
+        <a href="#caravaggio">Circuito de Caravaggio</a>
+        <a href="#natureza">Caminhos da Natureza</a>
+        <a href="#comer-ficar">Onde Comer &amp; Ficar</a>
+        <a href="#aventura">Aventura &amp; Voo Livre</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#servicos">Serviços</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" id="heroBg" role="img" aria-label="Vista panorâmica do Morro Agudo, Tangará SC"></div>
+      <div class="hero__shade"></div>
+      <div class="wrap hero__in">
+        <div class="hero__text">
+          <p class="eyebrow reveal">Santa Catarina · Altitude 1.075 m</p>
+          <h1 class="hero__title">
+            <span class="line"><span class="line__in">Onde o tangará</span></span>
+            <span class="line"><span class="line__in">dança entre <em>montanhas</em></span></span>
+            <span class="line"><span class="line__in">e <em class="wine">vinhedos.</em></span></span>
+          </h1>
+          <p class="hero__lead reveal">Natureza, altitude e enoturismo em harmonia. Descubra o Morro Agudo, o Circuito de Caravaggio e a hospitalidade colonial de Tangará.</p>
+          <div class="hero__cta reveal">
+            <a class="btn btn--red" href="#caravaggio">Explorar o circuito</a>
+            <a class="btn btn--ghost" href="#aventura">Ver Morro Agudo ao vivo</a>
+          </div>
+        </div>
+
+        <a href="#aventura" class="live-card" aria-label="Prévia ao vivo da rampa do Morro Agudo">
+          <span class="live-card__beam"></span>
+          <span class="live-card__body">
+            <span class="live-card__media">
+              <img src="img/rampa-morro-agudo.jpg" alt="Rampa de voo livre do Morro Agudo" loading="eager">
+              <span class="live-badge"><i></i> AO VIVO</span>
+            </span>
+            <span class="live-card__txt">
+              <strong>Rampa do Morro Agudo</strong>
+              <small>Vento <b id="heroWind">--</b> km/h · <b id="heroTemp">--</b>°C</small>
+            </span>
+          </span>
+        </a>
+      </div>
+      <a href="#busca" class="scroll-ind" aria-label="Rolar para baixo"><span></span></a>
+    </section>
+
+    <!-- CAPSULE SEARCH -->
+    <div class="wrap capsule-wrap" id="busca">
+      <form class="capsule" id="searchForm" role="search" aria-label="Buscar no portal">
+        <label class="capsule__f capsule__f--grow">
+          <span>O que você procura?</span>
+          <input type="search" id="q" placeholder="Vinícola, capitel, pizzaria, voo livre…" autocomplete="off">
+        </label>
+        <label class="capsule__f">
+          <span>Categoria</span>
+          <select id="cat">
+            <option value="">Tudo</option>
+            <option value="caravaggio">Circuito de Caravaggio</option>
+            <option value="natureza">Caminhos da Natureza</option>
+            <option value="vinho">Enoturismo</option>
+            <option value="cultura">História &amp; Lazer</option>
+            <option value="comer">Onde Comer</option>
+            <option value="ficar">Onde Ficar</option>
+            <option value="clube">Aventura &amp; Tradição</option>
+            <option value="evento">Eventos</option>
+          </select>
+        </label>
+        <button class="btn btn--blue" type="submit">Buscar</button>
+      </form>
+      <p class="search-status" id="searchStatus" role="status" aria-live="polite"></p>
+    </div>
+
+    <!-- STORY -->
+    <section class="section story" id="historia">
+      <div class="wrap story__grid">
+        <div>
+          <p class="eyebrow dark reveal">O nome</p>
+          <h2 class="h2 reveal">Inspirada numa dança.</h2>
+        </div>
+        <div class="story__txt reveal">
+          <p>Tangará deve seu nome ao pássaro <em>Chiroxiphia caudata</em>, famoso pela plumagem de cores fortes — azul-celeste e vermelho — e pela dança alegre em conjunto. Assim é a cidade: natureza preservada, altitude que convida ao voo e uma comunidade que recebe em roda, com vinho, café colonial e conversa.</p>
+          <ul class="palette" aria-label="Cores que inspiram o portal">
+            <li><i style="background:var(--tangara-blue)"></i>Azul da plumagem</li>
+            <li><i style="background:var(--tangara-red)"></i>Vermelho da coroa</li>
+            <li><i style="background:var(--wine-burgundy)"></i>Vinho do enoturismo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESCUBRA -->
+    <section class="section" id="descubra">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow dark reveal">Descubra Tangará</p><h2 class="h2 reveal">História, cultura e lazer na cidade</h2></header>
+        <div class="grid" id="gridCultura"></div>
+        <header class="sec-head sub"><h3 class="h3 reveal">Enoturismo &amp; vinícolas tradicionais</h3></header>
+        <div class="grid grid--2" id="gridVinho"></div>
+      </div>
+    </section>
+
+    <!-- CARAVAGGIO -->
+    <section class="section wine" id="caravaggio">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow reveal">28 km de estrada</p><h2 class="h2 reveal">Circuito de Caravaggio</h2>
+          <p class="lead reveal">Dez paradas entre fé, uva, suco, cerveja artesanal e mirantes. Siga a linha e deixe-se guiar.</p></header>
+        <ol class="route" id="gridCaravaggio"></ol>
+      </div>
+    </section>
+
+    <!-- NATUREZA -->
+    <section class="section" id="natureza">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow dark reveal">Linha Rio Bonito · Epagri Flor-e-Ser</p><h2 class="h2 reveal">Caminhos da Natureza</h2>
+          <p class="lead reveal">Capitéis, xaxins e a experiência do pinhão: um roteiro de contemplação para fazer a pé, de bike ou de carro.</p></header>
+        <h3 class="h3 reveal">Caminho dos 7 Capitéis</h3>
+        <ol class="capiteis" id="listCapiteis"></ol>
+        <div class="grid grid--3" id="gridNatureza"></div>
+      </div>
+    </section>
+
+    <!-- COMER & FICAR -->
+    <section class="section alt" id="comer-ficar">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow dark reveal">Sabores &amp; descanso</p><h2 class="h2 reveal">Onde comer &amp; ficar</h2></header>
+        <h3 class="h3 reveal">Gastronomia</h3>
+        <div class="grid" id="gridComer"></div>
+        <h3 class="h3 sub reveal">Hospedagem</h3>
+        <div class="grid grid--2" id="gridFicar"></div>
+      </div>
+    </section>
+
+    <!-- AVENTURA -->
+    <section class="section dark-sec" id="aventura">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow reveal">Morro Agudo · 1.075 m</p><h2 class="h2 reveal">Aventura &amp; Voo Livre</h2>
+          <p class="lead reveal">Acompanhe a rampa em tempo real e confira o vento antes de decolar.</p></header>
+        <div class="live-grid">
+          <div class="cam reveal">
+            <div class="cam__frame" id="camFrame">
+              <div class="cam__fallback" id="camFallback">
+                <span class="live-badge"><i></i> CÂMERA AO VIVO</span>
+                <p>Transmissão da rampa do Morro Agudo</p>
+                <small>Configure a URL da câmera em <code>js/app.js</code> (<code>CONFIG.cameraUrl</code>).</small>
+              </div>
+            </div>
+          </div>
+          <aside class="telemetry reveal" aria-label="Telemetria climática do Morro Agudo">
+            <h3>Telemetria · Voo livre</h3>
+            <div class="telemetry__grid">
+              <div><span>Vento</span><b id="tWind">--</b><small>km/h</small></div>
+              <div><span>Rajadas</span><b id="tGust">--</b><small>km/h</small></div>
+              <div><span>Direção</span><b id="tDir">--</b><small id="tDirTxt">&nbsp;</small></div>
+              <div><span>Temperatura</span><b id="tTemp">--</b><small>°C</small></div>
+            </div>
+            <div class="compass" aria-hidden="true"><i id="needle"></i><em>N</em></div>
+            <p class="telemetry__src" id="tSrc">Carregando dados…</p>
+          </aside>
+        </div>
+        <h3 class="h3 sub reveal">Clubes de aventura &amp; tradição</h3>
+        <div class="grid grid--3" id="gridClube"></div>
+      </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section class="section" id="eventos">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow dark reveal">Calendário</p><h2 class="h2 reveal">Festas &amp; eventos</h2></header>
+        <div class="grid grid--3" id="gridEvento"></div>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="section alt" id="mapa">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow dark reveal">Mapa interativo</p><h2 class="h2 reveal">SC-453 e rotas do interior</h2>
+          <p class="lead reveal">Posições aproximadas para planejamento. Confirme o acesso com a Secretaria de Turismo.</p></header>
+        <div class="map-filters" id="mapFilters" role="group" aria-label="Filtros do mapa"></div>
+        <div id="map" class="map reveal" aria-label="Mapa de atrativos de Tangará"></div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+      <div class="wrap">
+        <header class="sec-head"><p class="eyebrow dark reveal">Utilidade pública</p><h2 class="h2 reveal">Serviços essenciais</h2></header>
+        <div class="grid grid--3">
+          <article class="svc reveal"><h3>Hospital Frei Rogério</h3><p>Associação Anjos do Frei.</p><a href="https://www.google.com/maps/search/?api=1&query=Hospital+Frei+Rog%C3%A9rio+Tangar%C3%A1+SC" target="_blank" rel="noopener">Ver no mapa →</a></article>
+          <article class="svc svc--red reveal"><h3>Bombeiros</h3><p class="big">193</p><a href="tel:193">Ligar agora →</a></article>
+          <article class="svc reveal"><h3>Norberto Pneus</h3><p>Socorro na SC-453.</p><a href="https://www.google.com/maps/search/?api=1&query=Norberto+Pneus+Tangar%C3%A1+SC" target="_blank" rel="noopener">Ver no mapa →</a></article>
+        </div>
+        <h3 class="h3 sub reveal">Downloads institucionais</h3>
+        <div class="downloads">
+          <a class="dl reveal" href="mailto:turismo@tangara.sc.gov.br?subject=Solicita%C3%A7%C3%A3o%20-%20Edital%20de%20Patroc%C3%ADnio%20para%20Eventos"><b>Edital de Patrocínio para Eventos</b><span>Solicitar documento →</span></a>
+          <a class="dl reveal" href="mailto:turismo@tangara.sc.gov.br?subject=Cadastre%20sua%20Empresa%20-%20Turismo%20Tangar%C3%A1"><b>Cadastre sua Empresa</b><span>Solicitar formulário →</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div>
+        <img src="img/logo-tangara.png" alt="Portal de Turismo de Tangará" onerror="this.replaceWith(Object.assign(document.createElement('strong'),{textContent:'Turismo Tangará',className:'brand-txt'}))" width="170" height="50" class="footer__logo">
+        <p>Secretaria Municipal de Turismo<br>Tangará – SC</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p><a href="https://wa.me/554935327468" target="_blank" rel="noopener">(49) 3532-7468 · WhatsApp</a><br>
+        <a href="tel:+554935327450">Atendimento geral: (49) 3532-7450</a><br>
+        <a href="mailto:turismo@tangara.sc.gov.br">turismo@tangara.sc.gov.br</a></p>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <p>Segunda a Sexta<br>8h às 12h e das 13h às 17h</p>
+      </div>
+      <div>
+        <h4>Governo</h4>
+        <p><a href="https://www.tangara.sc.gov.br" target="_blank" rel="noopener">tangara.sc.gov.br</a><br>
+        <a href="https://www.amarp.org.br" target="_blank" rel="noopener">Portal AMARP</a><br>
+        <a href="https://www.fecam.org.br" target="_blank" rel="noopener">Portal FECAM</a></p>
+      </div>
+    </div>
+    <div class="wrap footer__copy">© <span id="year"></span> Secretaria Municipal de Turismo de Tangará – SC. Todos os direitos reservados.</div>
+  </footer>
+
+  <a class="fab" href="https://wa.me/554935327468?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20turismo%20em%20Tangar%C3%A1." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
